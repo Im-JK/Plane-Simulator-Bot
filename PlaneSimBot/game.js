@@ -23,7 +23,7 @@ client.on("message", (message) => {
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
 
-    if (Object.keys(client.commands).indexOf(command) == -1) {
+    if (command == "help" || command == "create" || command == "delete" || command == "flight" || command == "setname" || command == "stats" || command == "upgrade") {
         client.commands.get(command).execute(message, args, prefix);
     }
 })
